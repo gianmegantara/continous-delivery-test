@@ -32,6 +32,5 @@ jobs:
             git pull origin master
             go mod init
             go mod vendor
-            go build main.go
-            kill `pidof main`
-            nohup ./main > logs.log &
+            nohup bee run >/dev/null 2>&1 &
+            
