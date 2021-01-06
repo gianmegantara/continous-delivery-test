@@ -28,9 +28,13 @@ jobs:
           key: ${{ secrets.PRIVATE_KEY }}
           port: 22
           script: |
+            "echo" change directory
             cd go/src/continous-delivery-test
+            "echo" pull from master
             git pull origin master
+            "echo" initialize go mod
             go mod init
+            "echo" add vendor folder
             go mod vendor
+            "echo" run scripts app
             nohup bee run >/dev/null 2>&1 &
-            
