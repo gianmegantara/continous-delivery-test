@@ -31,6 +31,7 @@ jobs:
             cd go/src/continous-delivery-test
             git pull origin master
             go mod init
-            kill `pidof main`
+            go mod vendor
             go build main.go
+            kill `pidof main`
             nohup ./main > logs.log &
