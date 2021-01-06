@@ -41,4 +41,4 @@ jobs:
             "echo" kill pid app
             kill `pidof main`
             "echo" run scripts app
-            >nohup ./main > logs.log &
+            nohup ./main > main.out 2>&1 &
