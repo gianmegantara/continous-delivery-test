@@ -38,5 +38,7 @@ jobs:
             go mod vendor
             "echo" build app
             go build main.go
+            "echo" kill pid app
+            kill `pidof main`
             "echo" run scripts app
-            nohup ./main >/dev/null 2>&1 &
+            >nohup ./main > logs.log &
